@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deutsch A1 - Lộ Trình Học Tiếng Đức Cá Nhân Hóa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-app: #f3f5f9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f8fafc;
+      --text-main: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --primary-soft: #eff6ff;
+      --accent-der: #2563eb;
+      --accent-der-bg: #dbeafe;
+      --accent-die: #db2777;
+      --accent-die-bg: #fce7f3;
+      --accent-das: #059669;
+      --accent-das-bg: #d1fae5;
+      --accent-pl: #d97706;
+      --accent-pl-bg: #fef3c7;
+      --success: #10b981;
+      --success-bg: #ecfdf5;
+      --danger: #ef4444;
+      --danger-bg: #fef2f2;
+      --warning: #f59e0b;
+      --warning-bg: #fffbeb;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      line-height: 1.55;
+      padding-bottom: 84px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header & Topbar */
+    .topbar {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 18px 16px 22px;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.18);
+    }
+
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .topbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .flag-badge {
+      width: 38px;
+      height: 28px;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      flex-shrink: 0;
+    }
+    .flag-badge span:nth-child(1) { background: #000000; flex: 1; }
+    .flag-badge span:nth-child(2) { background: #dd0000; flex: 1; }
+    .flag-badge span:nth-child(3) { background: #ffce00; flex: 1; }
+
+    .brand h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      margin-top: 2px;
+    }
+
+    .speed-toggle-wrap {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+
+    .speed-btn {
+      border: none;
+      background: transparent;
+      color: #e2e8f0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .speed-btn.active {
+      background: #ffffff;
+      color: #1e3a8a;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Progress bar in header */
+    .progress-box {
+      margin-top: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 10px 14px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #34d399, #fbbf24);
+      border-radius: 999px;
+      transition: width 0.35s ease;
+      width: 0%;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: var(--bg-card);
+      padding: 6px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 10px 8px;
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(29, 78, 216, 0.28);
+    }
+
+    /* Action Toolbar */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .toolbar-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+      min-height: 42px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(29, 78, 216, 0.24);
+    }
+    .btn-primary:hover { background: var(--primary-hover); }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-secondary:hover { background: var(--bg-subtle); }
+
+    .btn-accent {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-color: #bfdbfe;
+    }
+    .btn-accent:hover { background: #dbeafe; }
+
+    .btn-danger {
+      background: var(--danger-bg);
+      color: var(--danger);
+      border-color: #fecaca;
+    }
+
+    .btn-sm {
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      min-height: 34px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Color Legend */
+    .legend-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: var(--bg-card);
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      font-size: 0.78rem;
+      align-items: center;
+    }
+
+    .pill-tag {
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      display: inline-block;
+    }
+    .tag-der { background: var(--accent-der-bg); color: var(--accent-der); }
+    .tag-die { background: var(--accent-die-bg); color: var(--accent-die); }
+    .tag-das { background: var(--accent-das-bg); color: var(--accent-das); }
+    .tag-pl  { background: var(--accent-pl-bg);  color: var(--accent-pl); }
+
+    /* Search Filter */
+    .search-input-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 220px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      font-family: inherit;
+      font-size: 0.88rem;
+      color: var(--text-main);
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+    }
+
+    /* Lesson Cards (Accordion) */
+    .lesson-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .lesson-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .lesson-card.completed {
+      border-left: 5px solid var(--success);
+    }
+
+    .lesson-header {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      background: var(--bg-card);
+    }
+
+    .lesson-header:hover {
+      background: #fafcff;
+    }
+
+    .lesson-title-area {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .complete-checkbox {
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      accent-color: var(--success);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .lesson-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .lesson-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .status-badge {
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.72rem;
+    }
+    .status-done { background: var(--success-bg); color: #047857; }
+    .status-pending { background: #f1f5f9; color: #475569; }
+
+    .chevron {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--bg-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .lesson-card.open .chevron {
+      transform: rotate(180deg);
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .lesson-body {
+      display: none;
+      padding: 0 16px 18px;
+      border-top: 1px solid var(--border);
+      background: #fcfdff;
+    }
+
+    .lesson-card.open .lesson-body {
+      display: block;
+    }
+
+    .lesson-actions-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--border);
+      margin-bottom: 14px;
+    }
+
+    /* Grammar Box */
+    .grammar-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+
+    .grammar-box h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .grammar-list {
+      padding-left: 18px;
+      font-size: 0.87rem;
+      color: #451a03;
+    }
+
+    .grammar-list li {
+      margin-bottom: 5px;
+    }
+
+    /* Vocab Grid */
+    .vocab-section-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .vocab-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .vocab-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .vocab-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .vocab-word {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .vocab-meaning {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 2px;
+    }
+
+    .vocab-example-box {
+      background: var(--bg-subtle);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 0.83rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .vocab-example-de {
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .vocab-example-vi {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
+
+    .audio-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
+      color: #1d4ed8;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .audio-btn:hover {
+      background: #dbeafe;
+      transform: scale(1.06);
+    }
+    .audio-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Tab Panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Card Container for AI Lookup & Settings */
+    .panel-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 16px;
+    }
+
+    .panel-card h2 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .panel-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      background: #ffffff;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+    }
+
+    textarea.form-control {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    /* AI Result Formatting */
+    .ai-output {
+      margin-top: 16px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      white-space: pre-wrap;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.58);
+      backdrop-filter: blur(3px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 100;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--bg-card);
+      width: 100%;
+      max-width: 640px;
+      max-height: 90vh;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .modal-header h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: var(--bg-subtle);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-secondary);
+    }
+
+    .modal-body {
+      padding: 18px;
+      overflow-y: auto;
+    }
+
+    .modal-footer {
+      padding: 12px 18px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      background: var(--bg-subtle);
+    }
+
+    /* Quiz Styling */
+    .quiz-q-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .quiz-q-title {
+      font-weight: 700;
+      font-size: 0.94rem;
+      margin-bottom: 10px;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .quiz-opt-btn {
+      text-align: left;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      font-family: inherit;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .quiz-opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .quiz-opt-btn.selected-correct {
+      background: var(--success-bg);
+      border-color: var(--success);
+      color: #065f46;
+      font-weight: 600;
+    }
+
+    .quiz-opt-btn.selected-wrong {
+      background: var(--danger-bg);
+      border-color: var(--danger);
+      color: #991b1b;
+      font-weight: 600;
+    }
+
+    .quiz-feedback {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: #ffffff;
+      border-left: 3px solid var(--primary);
+      color: var(--text-secondary);
+    }
+
+    /* Alert Toast Banner */
+    .alert-banner {
+      padding: 11px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.84rem;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .alert-warning {
+      background: var(--warning-bg);
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
+    .alert-danger {
+      background: var(--danger-bg);
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+    .alert-success {
+      background: var(--success-bg);
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    .toast-container {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      left: 16px;
+      max-width: 420px;
+      margin: 0 auto;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+      pointer-events: auto;
+      animation: slideUp 0.25s ease;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255,255,255,0.3);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: inline-block;
+    }
+
+    .spinner-dark {
+      border: 2.5px solid rgba(29, 78, 216, 0.2);
+      border-top-color: var(--primary);
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-row">
+        <div class="brand">
+          <div class="flag-badge" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div>
+            <h1>Deutsch A1 Master</h1>
+            <p>Lộ trình tiếng Đức cá nhân hóa &amp; Trợ lý AI</p>
+          </div>
+        </div>
+
+        <!-- Speech Rate Controller -->
+        <div class="speed-toggle-wrap" title="Tốc độ phát âm tiếng Đức">
+          <button type="button" class="speed-btn" id="speedSlowBtn" onclick="setSpeechRate(0.7)">🐢 0.7x</button>
+          <button type="button" class="speed-btn active" id="speedNormalBtn" onclick="setSpeechRate(1.0)">⚡ 1.0x</button>
+        </div>
+      </div>
+
+      <!-- Overall Progress -->
+      <div class="progress-box">
+        <div class="progress-meta">
+          <span id="progressLabel">Tiến độ hoàn thành: 0/0 bài</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- API Key Warning Banner -->
+    <div id="apiKeyBanner" class="alert-banner alert-warning" style="display: none;">
+      <span>⚠️ Bạn chưa cấu hình <strong>Gemini API Key</strong>. Các tính năng AI (Thêm bài tự động, Tra cứu AI, Quiz) cần API Key để hoạt động.</span>
+      <button type="button" class="btn btn-sm btn-primary" onclick="switchTab('settings')">Nhập Key</button>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button type="button" class="tab-btn active" data-tab="lessons" onclick="switchTab('lessons')">
+        📚 Lộ trình học
+      </button>
+      <button type="button" class="tab-btn" data-tab="ai-lookup" onclick="switchTab('ai-lookup')">
+        🤖 Tra cứu &amp; Ngữ pháp AI
+      </button>
+      <button type="button" class="tab-btn" data-tab="settings" onclick="switchTab('settings')">
+        ⚙️ Cài đặt &amp; Backup
+      </button>
+    </nav>
+
+    <!-- TAB 1: LESSONS ROADMAP -->
+    <section id="tab-lessons" class="tab-panel active">
+      <!-- Color Code Legend from Document -->
+      <div class="legend-bar">
+        <strong>Mã màu quán từ:</strong>
+        <span class="pill-tag tag-der">der (Giống đực)</span>
+        <span class="pill-tag tag-die">die (Giống cái)</span>
+        <span class="pill-tag tag-das">das (Giống trung)</span>
+        <span class="pill-tag tag-pl">Plural (Số nhiều)</span>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="search-input-wrap">
+          <input type="text" id="lessonSearchInput" class="search-input" placeholder="🔍 Tìm bài học, từ vựng tiếng Đức hoặc nghĩa tiếng Việt..." oninput="renderLessons()" />
+        </div>
+        <div class="toolbar-group">
+          <button type="button" class="btn btn-primary" onclick="openLessonModal()">
+            ➕ Thêm / Chỉnh sửa bài học
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="exportBackupJSON()">
+            ⬇️ Xuất (.json)
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('importFileInput').click()">
+            ⬆️ Nhập (.json)
+          </button>
+          <input type="file" id="importFileInput" accept=".json" style="display:none" onchange="importBackupJSON(event)" />
+        </div>
+      </div>
+
+      <!-- Lesson Cards Container -->
+      <div id="lessonListContainer" class="lesson-list"></div>
+    </section>
+
+    <!-- TAB 2: AI LOOKUP & GRAMMAR -->
+    <section id="tab-ai-lookup" class="tab-panel">
+      <div class="panel-card">
+        <h2>🤖 Tra cứu Từ vựng &amp; Phân tích Ngữ pháp AI</h2>
+        <p class="panel-desc">Nhập bất kỳ từ vựng, cụm từ hoặc câu tiếng Đức / tiếng Việt nào. Giáo viên AI sẽ phân tích nghĩa sát ngữ cảnh, giống danh từ (der/die/das), số nhiều, cách chia động từ (Konjugation) và cấu trúc câu.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="aiLookupInput">Từ hoặc câu cần tra cứu:</label>
+          <input type="text" id="aiLookupInput" class="form-control" placeholder="Ví dụ: sprechen, der Verein, In seiner Freizeit spielt er gerne Fußball..." onkeydown="if(event.key==='Enter') runAiLookup()" />
+        </div>
+
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-primary" id="aiLookupBtn" onclick="runAiLookup()">
+            ✨ Phân tích với Gemini AI
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="speakGerman(document.getElementById('aiLookupInput').value)">
+            🔊 Nghe phát âm
+          </button>
+        </div>
+
+        <div id="aiLookupResult" class="ai-output" style="display:none;"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: SETTINGS & BACKUP -->
+    <section id="tab-settings" class="tab-panel">
+      <div class="panel-card">
+        <h2>🔑 Cấu hình Gemini API Key</h2>
+        <p class="panel-desc">API Key được lưu cục bộ an toàn trong <code>localStorage</code> trên trình duyệt của bạn, dùng cho tính năng tự động bóc tách bài học mới, Tra cứu AI và Tạo bài tập Quiz.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="apiKeyInput">Gemini API Key cá nhân:</label>
+          <input type="password" id="apiKeyInput" class="form-control" placeholder="AIzaSy..." />
+        </div>
+
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-primary" onclick="saveApiKey()">💾 Lưu API Key</button>
+          <button type="button" class="btn btn-secondary" onclick="toggleApiKeyVisibility()">👁️ Hiện / Ẩn Key</button>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <h2>📦 Sao lưu &amp; Khôi phục dữ liệu (.json)</h2>
+        <p class="panel-desc">Tải xuống toàn bộ lộ trình học, từ vựng tùy chỉnh và trạng thái hoàn thành để đồng bộ giữa điện thoại và máy tính.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-primary" onclick="exportBackupJSON()">⬇️ Tải file Backup (.json)</button>
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('importFileInputSettings').click()">⬆️ Khôi phục từ file (.json)</button>
+          <input type="file" id="importFileInputSettings" accept=".json" style="display:none" onchange="importBackupJSON(event)" />
+          <button type="button" class="btn btn-danger" onclick="resetToDefaultData()">🔄 Khôi phục dữ liệu gốc ban đầu</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL: ADD / EDIT LESSON -->
+  <div id="lessonModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="lessonModalTitle">➕ Thêm / Chỉnh sửa bài học</h3>
+        <button type="button" class="modal-close" onclick="closeLessonModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="editLessonId" value="" />
+
+        <div class="form-group">
+          <label class="form-label" for="lessonTitleInput">Tên bài học / Tuần học:</label>
+          <input type="text" id="lessonTitleInput" class="form-control" placeholder="Ví dụ: Deutsch A1 — Lektion 4: Essen & Trinken" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="rawLessonContentInput">Dán nội dung bài học thô (từ vựng, ghi chú ngữ pháp, đoạn văn...) để AI tự bóc tách:</label>
+          <textarea id="rawLessonContentInput" class="form-control" placeholder="Dán văn bản bài học vào đây... Gemini AI sẽ tự động tóm tắt ngữ pháp và chuẩn hóa từ vựng thành 4 trường (word kèm der/die/das, meaning, example, trans)."></textarea>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <button type="button" class="btn btn-accent" id="aiParseLessonBtn" onclick="parseLessonWithAI()">
+            ✨ Bóc tách tự động bằng Gemini AI
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="lessonGrammarInput">Ngữ pháp trọng tâm (mỗi quy tắc 1 dòng):</label>
+          <textarea id="lessonGrammarInput" class="form-control" style="min-height:85px;" placeholder="- Quy tắc 1&#10;- Quy tắc 2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="lessonVocabJsonInput">Danh sách từ vựng chuẩn hóa (JSON Array: word, meaning, example, trans):</label>
+          <textarea id="lessonVocabJsonInput" class="form-control" style="min-height:130px; font-family:monospace; font-size:0.8rem;" placeholder='[{"word":"der Apfel","meaning":"quả táo","example":"Ich esse einen Apfel.","trans":"Tôi ăn một quả táo."}]'></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeLessonModal()">Hủy</button>
+        <button type="button" class="btn btn-primary" onclick="saveLessonFromModal()">💾 Lưu bài học</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: QUIZ -->
+  <div id="quizModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="quizModalTitle">🎯 Luyện Quiz Bài Học</h3>
+        <button type="button" class="modal-close" onclick="closeQuizModal()">✕</button>
+      </div>
+      <div class="modal-body" id="quizModalBody">
+        <!-- Quiz content injected here -->
+      </div>
+      <div class="modal-footer">
+        <span id="quizScoreBadge" style="margin-right:auto; font-weight:700; color:var(--primary); font-size:0.9rem;"></span>
+        <button type="button" class="btn btn-secondary" onclick="closeQuizModal()">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script>
+    /**
+     * DỮ LIỆU KHỞI TẠO ĐẦY ĐỦ 100% TỪ TÀI LIỆU ĐÍNH KÈM
+     * Bao gồm toàn bộ các phần:
+     * 1. Lektion 1: Begrüßung, Abschied, Personalpronomen & Konjugation (heißen, sein)
+     * 2. Lektion 2: Länder & Sprachen-Brücke (Các quốc gia & Cầu nối ngôn ngữ)
+     * 3. Lektion 3 (Phần 1): Zahlen 1–20 & Grammatik: „sprechen“
+     * 4. Lektion 3 (Phần 2): Grammatik 2 — Das Alter ausdrücken & Verben (kochen, lesen, tanzen, spielen, hören)
+     * 5. Lektion 3 (Phần 3): Lesetext / Bài đọc hiểu về Jonas & Wortschatz
+     */
+    const DEFAULT_LESSONS = [
+      {
+        id: "lektion-1-begruessung-pronomen",
+        title: "DE Deutsch A1 — Lektion 1: Begrüßung, Abschied, Personalpronomen & Verben (heißen, sein)",
+        completed: false,
+        grammar: [
+          "Mã màu quán từ (Farbkodierung): der (maskulin / giống đực), die (feminin / giống cái), das (neutral / giống trung), Plural (số nhiều).",
+          "Đại từ nhân xưng (Personalpronomen): ich (tôi), du (bạn - thân mật), er/sie/es (anh ấy/cô ấy/nó), wir (chúng tôi/chúng ta), ihr (các bạn), Sie (ông/bà/anh/chị - lịch sự, luôn viết hoa).",
+          "Chia động từ có quy tắc 'heißen' (tên là): ich heiße, du heißt, er/sie/es heißt, wir heißen, ihr heißt, sie/Sie heißen (Lưu ý: gốc kết thúc bằng -ß nên ngôi 'du' chỉ thêm -t thành 'heißt').",
+          "Chia động từ bất quy tắc 'sein' (thì, là, ở): ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind."
+        ],
+        vocab: [
+          {
+            word: "Hallo",
+            meaning: "xin chào (thân mật)",
+            example: "Hallo! Wie geht es dir?",
+            trans: "Xin chào! Bạn khỏe không?"
+          },
+          {
+            word: "Guten Tag",
+            meaning: "xin chào (trang trọng)",
+            example: "Guten Tag, Frau Müller!",
+            trans: "Xin chào bà Müller!"
+          },
+          {
+            word: "Tschüss",
+            meaning: "tạm biệt (thân mật)",
+            example: "Tschüss, bis morgen!",
+            trans: "Tạm biệt, hẹn gặp lại ngày mai!"
+          },
+          {
+            word: "Auf Wiedersehen",
+            meaning: "tạm biệt (trang trọng)",
+            example: "Auf Wiedersehen, Herr Schmidt!",
+            trans: "Tạm biệt ngài Schmidt!"
+          },
+          {
+            word: "der Name",
+            meaning: "tên",
+            example: "Mein Name ist Anna.",
+            trans: "Tên của tôi là Anna."
+          },
+          {
+            word: "der Vorname",
+            meaning: "tên (tên gọi)",
+            example: "Mein Vorname ist Max.",
+            trans: "Tên gọi của tôi là Max."
+          },
+          {
+            word: "der Nachname",
+            meaning: "họ",
+            example: "Wie ist Ihr Nachname?",
+            trans: "Họ của ngài là gì?"
+          },
+          {
+            word: "die Begrüßung",
+            meaning: "lời chào",
+            example: "Die Begrüßung in Deutschland ist oft ein Händedruck.",
+            trans: "Lời chào ở Đức thường là một cái bắt tay."
+          },
+          {
+            word: "der Abschied",
+            meaning: "lời tạm biệt",
+            example: "Zum Abschied sagen wir Auf Wiedersehen.",
+            trans: "Để tạm biệt, chúng tôi nói Auf Wiedersehen."
+          },
+          {
+            word: "ich / du / er / sie / es",
+            meaning: "tôi / bạn (thân mật) / anh ấy / cô ấy / nó",
+            example: "Ich bin müde, aber du bist nett.",
+            trans: "Tôi mệt, nhưng bạn thật tốt bụng."
+          },
+          {
+            word: "wir / ihr / Sie",
+            meaning: "chúng tôi / các bạn / ông, bà, anh, chị (lịch sự)",
+            example: "Wir sind hier und ihr seid pünktlich.",
+            trans: "Chúng tôi ở đây và các bạn rất đúng giờ."
+          },
+          {
+            word: "heißen",
+            meaning: "tên là (động từ có quy tắc)",
+            example: "Ich heiße Max. Du heißt Lisa. Sie heißt Anna.",
+            trans: "Tôi tên là Max. Bạn tên là Lisa. Cô ấy tên là Anna."
+          },
+          {
+            word: "sein",
+            meaning: "thì, là, ở (động từ bất quy tắc)",
+            example: "Er ist Lehrer. Sie sind Kollegen.",
+            trans: "Anh ấy là giáo viên. Họ/Ông bà là đồng nghiệp."
+          }
+        ]
+      },
+      {
+        id: "lektion-2-laender-sprachen",
+        title: "DE Deutsch A1 — Lektion 2: Länder & Die Sprachen-Brücke (Các quốc gia & Cầu nối ngôn ngữ)",
+        completed: false,
+        grammar: [
+          "Tên hầu hết các quốc gia trong tiếng Đức dùng KHÔNG có quán từ (Deutschland, Österreich, Vietnam, Frankreich, Spanien, Japan).",
+          "Ngoại lệ đặc biệt cần nhớ: 'die Schweiz' (Thụy Sĩ) luôn đi kèm quán từ giống cái 'die'.",
+          "Cầu nối ngôn ngữ (Die Sprachen-Brücke): Tên ngôn ngữ đứng KHÔNG có quán từ (ohne Artikel), giống như tên quốc gia (ví dụ: Deutsch, Englisch, Vietnamesisch)."
+        ],
+        vocab: [
+          {
+            word: "Deutschland",
+            meaning: "nước Đức",
+            example: "Ich wohne in Deutschland.",
+            trans: "Tôi sống ở nước Đức."
+          },
+          {
+            word: "Deutsch",
+            meaning: "tiếng Đức",
+            example: "Wir lernen zusammen Deutsch.",
+            trans: "Chúng tôi cùng nhau học tiếng Đức."
+          },
+          {
+            word: "Österreich",
+            meaning: "nước Áo",
+            example: "Jonas kommt aus Österreich.",
+            trans: "Jonas đến từ nước Áo."
+          },
+          {
+            word: "die Schweiz",
+            meaning: "Thụy Sĩ (có quán từ die)",
+            example: "Zürich liegt in der Schweiz.",
+            trans: "Zürich nằm ở Thụy Sĩ."
+          },
+          {
+            word: "England",
+            meaning: "nước Anh",
+            example: "London ist die Hauptstadt von England.",
+            trans: "London là thủ đô của nước Anh."
+          },
+          {
+            word: "Englisch",
+            meaning: "tiếng Anh",
+            example: "Du sprichst sehr gut Englisch!",
+            trans: "Bạn nói tiếng Anh rất giỏi!"
+          },
+          {
+            word: "Vietnam",
+            meaning: "Việt Nam",
+            example: "Ich komme aus Vietnam.",
+            trans: "Tôi đến từ Việt Nam."
+          },
+          {
+            word: "Vietnamesisch",
+            meaning: "tiếng Việt",
+            example: "Ich spreche Vietnamesisch.",
+            trans: "Tôi nói tiếng Việt."
+          },
+          {
+            word: "Frankreich",
+            meaning: "nước Pháp",
+            example: "Paris ist in Frankreich.",
+            trans: "Paris ở nước Pháp."
+          },
+          {
+            word: "Französisch",
+            meaning: "tiếng Pháp",
+            example: "Sprecht ihr Französisch?",
+            trans: "Các bạn nói tiếng Pháp phải không?"
+          },
+          {
+            word: "Spanien",
+            meaning: "Tây Ban Nha",
+            example: "Im Sommer fahren wir nach Spanien.",
+            trans: "Vào mùa hè chúng tôi đi Tây Ban Nha."
+          },
+          {
+            word: "Spanisch",
+            meaning: "tiếng Tây Ban Nha",
+            example: "Sie sprechen Spanisch.",
+            trans: "Họ / Ông bà nói tiếng Tây Ban Nha."
+          },
+          {
+            word: "Japan",
+            meaning: "Nhật Bản",
+            example: "Tokio liegt in Japan.",
+            trans: "Tokyo nằm ở Nhật Bản."
+          },
+          {
+            word: "Japanisch",
+            meaning: "tiếng Nhật",
+            example: "Er lernt Japanisch an der Universität.",
+            trans: "Anh ấy học tiếng Nhật ở trường đại học."
+          }
+        ]
+      },
+      {
+        id: "lektion-3-part1-zahlen-sprechen",
+        title: "DE Deutsch A1 — Lektion 3 (Phần 1): Zahlen 1–20 & Grammatik: „sprechen“",
+        completed: false,
+        grammar: [
+          "Số đếm từ 1 đến 12 là các từ gốc cần học thuộc lòng (eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf).",
+          "Số đếm từ 13 đến 19 ghép theo quy tắc: số đơn vị + 'zehn'. LƯU Ý BẤT QUY TẮC: 16 là 'sechzehn' (bỏ -s ở sechs) và 17 là 'siebzehn' (bỏ -en ở sieben).",
+          "Số 20 là 'zwanzig'.",
+          "Chia động từ bất quy tắc 'sprechen' (nói - biến đổi nguyên âm e -> i ở ngôi du và er/sie/es): ich spreche, du sprichst, er/sie/es spricht, wir sprechen, ihr sprecht, sie/Sie sprechen."
+        ],
+        vocab: [
+          {
+            word: "eins / zwei / drei / vier / fünf",
+            meaning: "số 1 / 2 / 3 / 4 / 5",
+            example: "Ich habe drei Bücher und fünf Stifte.",
+            trans: "Tôi có ba quyển sách và năm cây bút."
+          },
+          {
+            word: "sechs / sieben / acht / neun / zehn",
+            meaning: "số 6 / 7 / 8 / 9 / 10",
+            example: "Der Kurs beginnt um neun oder zehn Uhr.",
+            trans: "Khóa học bắt đầu lúc 9 hoặc 10 giờ."
+          },
+          {
+            word: "elf / zwölf",
+            meaning: "số 11 / 12",
+            example: "Es ist zwölf Uhr mittags.",
+            trans: "Bây giờ là 12 giờ trưa."
+          },
+          {
+            word: "dreizehn / vierzehn / fünfzehn",
+            meaning: "số 13 / 14 / 15",
+            example: "In der Klasse sind fünfzehn Schüler.",
+            trans: "Trong lớp có mười lăm học sinh."
+          },
+          {
+            word: "sechzehn",
+            meaning: "số 16 (lưu ý bỏ 's' của sechs)",
+            example: "Ich bin sechzehn Jahre alt.",
+            trans: "Tôi mười sáu tuổi."
+          },
+          {
+            word: "siebzehn",
+            meaning: "số 17 (lưu ý bỏ 'en' của sieben)",
+            example: "Jonas ist siebzehn Jahre alt.",
+            trans: "Jonas mười bảy tuổi."
+          },
+          {
+            word: "achtzehn / neunzehn / zwanzig",
+            meaning: "số 18 / 19 / 20",
+            example: "Er ist zwanzig Jahre alt.",
+            trans: "Anh ấy hai mươi tuổi."
+          },
+          {
+            word: "sprechen (sprichst / spricht)",
+            meaning: "nói (ngôn ngữ)",
+            example: "Er spricht drei Sprachen: Deutsch, Englisch und Spanisch.",
+            trans: "Anh ấy nói được ba ngôn ngữ: tiếng Đức, tiếng Anh và tiếng Tây Ban Nha."
+          }
+        ]
+      },
+      {
+        id: "lektion-3-part2-alter-hobbys",
+        title: "DE Deutsch A1 — Lektion 3 (Phần 2): Grammatik 2 — Alter & Hobbys (kochen, lesen, tanzen)",
+        completed: false,
+        grammar: [
+          "Hỏi tuổi thân mật: 'Wie alt bist du?' (Bạn bao nhiêu tuổi?) | Hỏi tuổi trang trọng: 'Wie alt sind Sie?' (Ông/Bà bao nhiêu tuổi?).",
+          "Trả lời tuổi: Chủ ngữ + động từ 'sein' + số tuổi + (Jahre alt). Phần 'Jahre alt' có thể lược bỏ nhưng rất thường dùng. Ví dụ: 'Ich bin 16 (Jahre alt).'",
+          "Động từ có quy tắc (regelmäßig) = gốc động từ + đuôi (-e, -st, -t, -en, -t, -en). Ví dụ: kochen (nấu ăn), spielen (chơi), hören (nghe).",
+          "Động từ biến đổi nguyên âm e -> ie ở ngôi du và er/sie/es: 'lesen' (đọc) -> ich lese, du liest, er/sie/es liest, wir lesen, ihr lest, sie/Sie lesen.",
+          "Động từ có gốc kết thúc bằng -z: 'tanzen' (nhảy/khiêu vũ) -> ngôi 'du' chỉ thêm -t (không thêm -st): du tanzt."
+        ],
+        vocab: [
+          {
+            word: "Wie alt bist du? / Wie alt sind Sie?",
+            meaning: "Bạn bao nhiêu tuổi? / Ông bà bao nhiêu tuổi?",
+            example: "Wie alt bist du? – Ich bin 16 Jahre alt.",
+            trans: "Bạn bao nhiêu tuổi? – Tôi 16 tuổi."
+          },
+          {
+            word: "Jahre alt",
+            meaning: "... tuổi",
+            example: "Wir sind 17 Jahre alt.",
+            trans: "Chúng tôi 17 tuổi."
+          },
+          {
+            word: "kochen",
+            meaning: "nấu ăn (động từ có quy tắc)",
+            example: "Am Wochenende koche ich gerne Suppe.",
+            trans: "Vào cuối tuần tôi thích nấu súp."
+          },
+          {
+            word: "lesen (liest)",
+            meaning: "đọc (bất quy tắc e -> ie ở du, er/sie/es)",
+            example: "Er liest gerne ein Buch am Abend.",
+            trans: "Anh ấy thích đọc sách vào buổi tối."
+          },
+          {
+            word: "tanzen (du tanzt)",
+            meaning: "nhảy, khiêu vũ (gốc kết thúc bằng -z)",
+            example: "Du tanzt sehr gut!",
+            trans: "Bạn nhảy rất đẹp!"
+          },
+          {
+            word: "spielen",
+            meaning: "chơi (thể thao, nhạc cụ, trò chơi)",
+            example: "In seiner Freizeit spielt er gerne Fußball.",
+            trans: "Trong thời gian rảnh anh ấy thích chơi bóng đá."
+          },
+          {
+            word: "hören",
+            meaning: "nghe",
+            example: "Wir hören zusammen Musik.",
+            trans: "Chúng tôi cùng nhau nghe nhạc."
+          }
+        ]
+      },
+      {
+        id: "lektion-3-part3-lesetext-jonas",
+        title: "DE Deutsch A1 — Lektion 3 (Phần 3): Lesetext / Bài đọc hiểu về Jonas & Wortschatz",
+        completed: false,
+        grammar: [
+          "Đoạn văn mẫu (Lesetext): 'Heute kommt ein neuer Schüler in die Klasse. Er heißt Jonas und kommt aus Österreich. Jonas ist 17 Jahre alt. Er spricht Deutsch, Englisch und ein bisschen Französisch. In seiner Freizeit spielt er gerne Fußball, und er tanzt auch gerne. Die anderen Schüler sind neugierig und fragen: „Spielst du in einem Verein?“ Jonas antwortet: „Ja, ich spiele im Fußballverein meiner Stadt!“ Die anderen Schüler finden Jonas sehr sympathisch. Jonas ist jetzt neu im Kurs und hat neue Freunde.'",
+          "Cấu trúc diễn đạt sở thích: Động từ + 'gerne' (thích làm gì). Ví dụ: 'Er spielt gerne Fußball' (Anh ấy thích chơi bóng đá).",
+          "Câu hỏi Yes/No (Ja/Nein-Frage): Đưa động từ chia lên đầu câu -> 'Spielst du in einem Verein?' (Bạn có chơi trong câu lạc bộ nào không?)."
+        ],
+        vocab: [
+          {
+            word: "der Schüler / die Schülerin",
+            meaning: "học sinh (nam / nữ)",
+            example: "Heute kommt ein neuer Schüler in die Klasse.",
+            trans: "Hôm nay có một học sinh mới đến lớp."
+          },
+          {
+            word: "die Klasse",
+            meaning: "lớp học",
+            example: "Unsere Klasse hat zwanzig Schüler.",
+            trans: "Lớp học của chúng tôi có hai mươi học sinh."
+          },
+          {
+            word: "ein bisschen",
+            meaning: "một chút",
+            example: "Er spricht Deutsch, Englisch und ein bisschen Französisch.",
+            trans: "Anh ấy nói tiếng Đức, tiếng Anh và một chút tiếng Pháp."
+          },
+          {
+            word: "der Verein",
+            meaning: "câu lạc bộ / hội",
+            example: "Ich spiele im Fußballverein meiner Stadt.",
+            trans: "Tôi chơi ở câu lạc bộ bóng đá của thành phố tôi."
+          },
+          {
+            word: "neugierig",
+            meaning: "tò mò",
+            example: "Die anderen Schüler sind neugierig und fragen viel.",
+            trans: "Những học sinh khác rất tò mò và hỏi nhiều."
+          },
+          {
+            word: "sympathisch",
+            meaning: "dễ mến, có thiện cảm",
+            example: "Die anderen Schüler finden Jonas sehr sympathisch.",
+            trans: "Những học sinh khác thấy Jonas rất dễ mến."
+          },
+          {
+            word: "die anderen Schüler",
+            meaning: "những học sinh khác (số nhiều)",
+            example: "Die anderen Schüler begrüßen Jonas freundlich.",
+            trans: "Những học sinh khác chào đón Jonas một cách thân thiện."
+          },
+          {
+            word: "neue Freunde",
+            meaning: "những người bạn mới (số nhiều)",
+            example: "Jonas ist jetzt neu im Kurs und hat neue Freunde.",
+            trans: "Jonas hiện mới tham gia khóa học và có những người bạn mới."
+          },
+          {
+            word: "die Freizeit",
+            meaning: "thời gian rảnh rỗi",
+            example: "In seiner Freizeit spielt er gerne Fußball.",
+            trans: "Trong thời gian rảnh rỗi anh ấy thích chơi bóng đá."
+          }
+        ]
+      }
+    ];
+
+    // LocalStorage Keys
+    const STORAGE_KEYS = {
+      LESSONS: "deutsch_a1_lessons_v1",
+      API_KEY: "deutsch_a1_gemini_api_key_v1",
+      SPEECH_RATE: "deutsch_a1_speech_rate_v1"
+    };
+
+    // Global State
+    let lessons = [];
+    let speechRate = 1.0;
+    let openLessonIds = new Set(["lektion-1-begruessung-pronomen"]);
+
+    // Initialize Application
+    window.addEventListener("DOMContentLoaded", () => {
+      loadState();
+      renderLessons();
+      updateProgressUI();
+      checkApiKeyStatus();
+    });
+
+    function loadState() {
+      try {
+        const savedLessons = localStorage.getItem(STORAGE_KEYS.LESSONS);
+        if (savedLessons) {
+          const parsed = JSON.parse(savedLessons);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            lessons = parsed;
+          } else {
+            lessons = structuredClone(DEFAULT_LESSONS);
+            saveLessonsToStorage();
+          }
+        } else {
+          lessons = structuredClone(DEFAULT_LESSONS);
+          saveLessonsToStorage();
+        }
+      } catch (e) {
+        lessons = structuredClone(DEFAULT_LESSONS);
+      }
+
+      const savedKey = localStorage.getItem(STORAGE_KEYS.API_KEY) || "";
+      document.getElementById("apiKeyInput").value = savedKey;
+
+      const savedRate = parseFloat(localStorage.getItem(STORAGE_KEYS.SPEECH_RATE));
+      if (savedRate === 0.7 || savedRate === 1.0) {
+        setSpeechRate(savedRate, false);
+      }
+    }
+
+    function saveLessonsToStorage() {
+      localStorage.setItem(STORAGE_KEYS.LESSONS, JSON.stringify(lessons));
+      updateProgressUI();
+    }
+
+    function getApiKey() {
+      return (localStorage.getItem(STORAGE_KEYS.API_KEY) || "").trim();
+    }
+
+    function checkApiKeyStatus() {
+      const key = getApiKey();
+      const banner = document.getElementById("apiKeyBanner");
+      banner.style.display = key ? "none" : "flex";
+    }
+
+    function saveApiKey() {
+      const val = document.getElementById("apiKeyInput").value.trim();
+      localStorage.setItem(STORAGE_KEYS.API_KEY, val);
+      checkApiKeyStatus();
+      showToast(val ? "✅ Đã lưu Gemini API Key thành công!" : "⚠️ Đã xóa API Key.");
+    }
+
+    function toggleApiKeyVisibility() {
+      const input = document.getElementById("apiKeyInput");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    // Tab Navigation
+    function switchTab(tabName) {
+      document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.tab === tabName);
+      });
+      document.querySelectorAll(".tab-panel").forEach(panel => {
+        panel.classList.toggle("active", panel.id === `tab-${tabName}`);
+      });
+    }
+
+    // Speech Synthesis (de-DE)
+    function setSpeechRate(rate, notify = true) {
+      speechRate = rate;
+      localStorage.setItem(STORAGE_KEYS.SPEECH_RATE, String(rate));
+      document.getElementById("speedSlowBtn").classList.toggle("active", rate === 0.7);
+      document.getElementById("speedNormalBtn").classList.toggle("active", rate === 1.0);
+      if (notify) {
+        showToast(`🔊 Tốc độ đọc: ${rate === 0.7 ? "0.7x (Nghe chậm)" : "1.0x (Chuẩn bản xứ)"}`);
+      }
+    }
+
+    function speakGerman(text) {
+      if (!text || !text.trim()) {
+        showToast("⚠️ Không có nội dung tiếng Đức để đọc.");
+        return;
+      }
+      if (!("speechSynthesis" in window)) {
+        showToast("❌ Trình duyệt của bạn không hỗ trợ phát âm Web Speech API.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      // Clean slashes for smoother pronunciation
+      const cleanText = text.replace(/\s*\/\s*/g, ", ");
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utterance.lang = "de-DE";
+      utterance.rate = speechRate;
+
+      const voices = window.speechSynthesis.getVoices();
+      const deVoice = voices.find(v => v.lang.toLowerCase().includes("de-de")) ||
+                      voices.find(v => v.lang.toLowerCase().startsWith("de"));
+      if (deVoice) {
+        utterance.voice = deVoice;
+      }
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Ensure voices are loaded on mobile browsers
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+
+    // Progress Bar Update
+    function updateProgressUI() {
+      const total = lessons.length;
+      const done = lessons.filter(l => l.completed).length;
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+      document.getElementById("progressLabel").textContent = `Tiến độ hoàn thành: ${done}/${total} bài`;
+      document.getElementById("progressPercent").textContent = `${pct}%`;
+      document.getElementById("progressFill").style.width = `${pct}%`;
+    }
+
+    // Article Badge Helper (der / die / das)
+    function formatGermanWordHTML(word) {
+      const trimmed = word.trim();
+      if (/^der\s+/i.test(trimmed)) {
+        return `<span class="pill-tag tag-der">der</span> ${escapeHtml(trimmed.replace(/^der\s+/i, ""))}`;
+      }
+      if (/^die\s+/i.test(trimmed)) {
+        return `<span class="pill-tag tag-die">die</span> ${escapeHtml(trimmed.replace(/^die\s+/i, ""))}`;
+      }
+      if (/^das\s+/i.test(trimmed)) {
+        return `<span class="pill-tag tag-das">das</span> ${escapeHtml(trimmed.replace(/^das\s+/i, ""))}`;
+      }
+      return escapeHtml(trimmed);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    // Render Lesson Accordion Cards
+    function renderLessons() {
+      const container = document.getElementById("lessonListContainer");
+      const query = document.getElementById("lessonSearchInput").value.trim().toLowerCase();
+
+      const filtered = lessons.filter(lesson => {
+        if (!query) return true;
+        const inTitle = lesson.title.toLowerCase().includes(query);
+        const inGrammar = (lesson.grammar || []).some(g => g.toLowerCase().includes(query));
+        const inVocab = (lesson.vocab || []).some(v =>
+          v.word.toLowerCase().includes(query) ||
+          v.meaning.toLowerCase().includes(query) ||
+          v.example.toLowerCase().includes(query)
+        );
+        return inTitle || inGrammar || inVocab;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="panel-card" style="text-align:center; padding:32px 16px;">
+            <p style="color:var(--text-muted); font-size:0.95rem;">Không tìm thấy bài học hoặc từ vựng phù hợp với từ khóa "<strong>${escapeHtml(query)}</strong>".</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(lesson => {
+        const isOpen = openLessonIds.has(lesson.id) || query.length > 0;
+        const vocabCount = (lesson.vocab || []).length;
+
+        return `
+          <article class="lesson-card ${lesson.completed ? "completed" : ""} ${isOpen ? "open" : ""}" id="card-${lesson.id}">
+            <div class="lesson-header" onclick="toggleLessonCard('${lesson.id}')">
+              <div class="lesson-title-area">
+                <input
+                  type="checkbox"
+                  class="complete-checkbox"
+                  ${lesson.completed ? "checked" : ""}
+                  title="Đánh dấu đã hoàn thành"
+                  onclick="event.stopPropagation(); toggleLessonComplete('${lesson.id}')"
+                />
+                <div>
+                  <h2 class="lesson-title">${escapeHtml(lesson.title)}</h2>
+                  <div class="lesson-meta">
+                    <span class="status-badge ${lesson.completed ? "status-done" : "status-pending"}">
+                      ${lesson.completed ? "✓ Đã hoàn thành" : "Chưa hoàn thành"}
+                    </span>
+                    <span>• ${vocabCount} mục từ vựng &amp; mẫu câu</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chevron" aria-hidden="true">▼</div>
+            </div>
+
+            <div class="lesson-body">
+              <div class="lesson-actions-bar">
+                <button type="button" class="btn btn-primary btn-sm" onclick="startLessonQuiz('${lesson.id}')">
+                  🎯 Luyện Quiz bài này (5 câu)
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="openLessonModal('${lesson.id}')">
+                  ✏️ Chỉnh sửa bài
+                </button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="deleteLesson('${lesson.id}')">
+                  🗑️ Xóa
+                </button>
+              </div>
+
+              <!-- Grammar Summary -->
+              <div class="grammar-box">
+                <h3>📘 Ngữ pháp trọng tâm</h3>
+                <ul class="grammar-list">
+                  ${(lesson.grammar || []).map(rule => `<li>${escapeHtml(rule)}</li>`).join("")}
+                </ul>
+              </div>
+
+              <!-- Core Vocabulary -->
+              <div class="vocab-section-title">
+                <span>🗣️ Từ vựng cốt lõi &amp; Ví dụ thực tế (${vocabCount})</span>
+              </div>
+              <div class="vocab-grid">
+                ${(lesson.vocab || []).map(v => `
+                  <div class="vocab-item">
+                    <div class="vocab-top">
+                      <div>
+                        <div class="vocab-word">${formatGermanWordHTML(v.word)}</div>
+                        <div class="vocab-meaning">${escapeHtml(v.meaning)}</div>
+                      </div>
+                      <button type="button" class="audio-btn" title="Phát âm từ vựng" onclick='speakGerman(${JSON.stringify(v.word)})'>
+                        🔊
+                      </button>
+                    </div>
+                    <div class="vocab-example-box">
+                      <div>
+                        <div class="vocab-example-de">${escapeHtml(v.example)}</div>
+                        <div class="vocab-example-vi">${escapeHtml(v.trans)}</div>
+                      </div>
+                      <button type="button" class="audio-btn" title="Phát âm câu ví dụ" onclick='speakGerman(${JSON.stringify(v.example)})'>
+                        🔊
+                      </button>
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function toggleLessonCard(id) {
+      if (openLessonIds.has(id)) {
+        openLessonIds.delete(id);
+      } else {
+        openLessonIds.add(id);
+      }
+      renderLessons();
+    }
+
+    function toggleLessonComplete(id) {
+      const lesson = lessons.find(l => l.id === id);
+      if (!lesson) return;
+      lesson.completed = !lesson.completed;
+      saveLessonsToStorage();
+      renderLessons();
+      showToast(lesson.completed ? `🎉 Đã hoàn thành: ${lesson.title}` : "Đã bỏ đánh dấu hoàn thành.");
+    }
+
+    function deleteLesson(id) {
+      const idx = lessons.findIndex(l => l.id === id);
+      if (idx === -1) return;
+      const removed = lessons.splice(idx, 1)[0];
+      saveLessonsToStorage();
+      renderLessons();
+      showToast(`🗑️ Đã xóa bài "${removed.title}".`);
+    }
+
+    // Add / Edit Lesson Modal
+    function openLessonModal(lessonId = "") {
+      const modal = document.getElementById("lessonModal");
+      const titleEl = document.getElementById("lessonModalTitle");
+      document.getElementById("editLessonId").value = lessonId;
+      document.getElementById("rawLessonContentInput").value = "";
+
+      if (lessonId) {
+        const lesson = lessons.find(l => l.id === lessonId);
+        if (lesson) {
+          titleEl.textContent = "✏️ Chỉnh sửa bài học";
+          document.getElementById("lessonTitleInput").value = lesson.title;
+          document.getElementById("lessonGrammarInput").value = (lesson.grammar || []).map(g => `- ${g}`).join("\n");
+          document.getElementById("lessonVocabJsonInput").value = JSON.stringify(lesson.vocab || [], null, 2);
+        }
+      } else {
+        titleEl.textContent = "➕ Thêm bài học mới";
+        document.getElementById("lessonTitleInput").value = "";
+        document.getElementById("lessonGrammarInput").value = "";
+        document.getElementById("lessonVocabJsonInput").value = "";
+      }
+
+      modal.classList.add("open");
+    }
+
+    function closeLessonModal() {
+      document.getElementById("lessonModal").classList.remove("open");
+    }
+
+    function saveLessonFromModal() {
+      const editId = document.getElementById("editLessonId").value.trim();
+      const title = document.getElementById("lessonTitleInput").value.trim();
+      const grammarRaw = document.getElementById("lessonGrammarInput").value.trim();
+      const vocabJsonRaw = document.getElementById("lessonVocabJsonInput").value.trim();
+
+      if (!title) {
+        showToast("⚠️ Vui lòng nhập tên bài học!");
+        return;
+      }
+
+      const grammarList = grammarRaw
+        .split("\n")
+        .map(line => line.replace(/^[-*•]\s*/, "").trim())
+        .filter(Boolean);
+
+      let vocabList = [];
+      if (vocabJsonRaw) {
+        try {
+          const parsed = JSON.parse(vocabJsonRaw);
+          if (!Array.isArray(parsed)) throw new Error("Not array");
+          vocabList = parsed.map(item => ({
+            word: String(item.word || "").trim(),
+            meaning: String(item.meaning || "").trim(),
+            example: String(item.example || "").trim(),
+            trans: String(item.trans || "").trim()
+          })).filter(v => v.word);
+        } catch (err) {
+          showToast("❌ Dữ liệu JSON từ vựng không hợp lệ. Vui lòng kiểm tra cú pháp!");
+          return;
+        }
+      }
+
+      if (editId) {
+        const existing = lessons.find(l => l.id === editId);
+        if (existing) {
+          existing.title = title;
+          existing.grammar = grammarList;
+          existing.vocab = vocabList;
+          openLessonIds.add(existing.id);
+        }
+        showToast("✅ Đã cập nhật bài học!");
+      } else {
+        const newId = "lesson-" + Date.now();
+        lessons.push({
+          id: newId,
+          title,
+          completed: false,
+          grammar: grammarList,
+          vocab: vocabList
+        });
+        openLessonIds.add(newId);
+        showToast("✅ Đã thêm bài học mới vào lộ trình!");
+      }
+
+      saveLessonsToStorage();
+      renderLessons();
+      closeLessonModal();
+    }
+
+    // Gemini API Helper with Exponential Backoff
+    async function callGeminiAPI({ prompt, systemInstruction = "", responseSchema = null }) {
+      const apiKey = getApiKey();
+      if (!apiKey) {
+        switchTab("settings");
+        throw new Error("Bạn chưa nhập Gemini API Key. Vui lòng dán Key vào mục Cài đặt.");
+      }
+
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+      const payload = {
+        contents: [{ parts: [{ text: prompt }] }]
+      };
+
+      if (systemInstruction) {
+        payload.systemInstruction = { parts: [{ text: systemInstruction }] };
+      }
+
+      if (responseSchema) {
+        payload.generationConfig = {
+          responseMimeType: "application/json",
+          responseSchema: responseSchema
+        };
+      }
+
+      const delays = [1000, 2000, 4000];
+      let lastError = null;
+
+      for (let attempt = 0; attempt <= delays.length; attempt++) {
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) {
+            const errData = await response.json().catch(() => ({}));
+            const msg = errData?.error?.message || `Lỗi HTTP ${response.status}`;
+            if (response.status === 429 && attempt < delays.length) {
+              await new Promise(r => setTimeout(r, delays[attempt]));
+              continue;
+            }
+            throw new Error(msg);
+          }
+
+          const data = await response.json();
+          const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (!text) throw new Error("Phản hồi từ Gemini API trống.");
+          return text;
+        } catch (err) {
+          lastError = err;
+          if (attempt < delays.length && err.message.includes("429")) {
+            await new Promise(r => setTimeout(r, delays[attempt]));
+          } else {
+            break;
+          }
+        }
+      }
+
+      throw lastError || new Error("Không thể kết nối tới Gemini API.");
+    }
+
+    // AI Feature 1: Auto Parse Raw Lesson Content
+    async function parseLessonWithAI() {
+      const rawText = document.getElementById("rawLessonContentInput").value.trim();
+      if (!rawText) {
+        showToast("⚠️ Vui lòng dán nội dung bài học thô vào ô phía trên trước!");
+        return;
+      }
+
+      const btn = document.getElementById("aiParseLessonBtn");
+      const originalHtml = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = `<span class="spinner spinner-dark"></span> Đang bóc tách với AI...`;
+
+      const schema = {
+        type: "OBJECT",
+        properties: {
+          title: { type: "STRING" },
+          grammar: {
+            type: "ARRAY",
+            items: { type: "STRING" }
+          },
+          vocab: {
+            type: "ARRAY",
+            items: {
+              type: "OBJECT",
+              properties: {
+                word: { type: "STRING" },
+                meaning: { type: "STRING" },
+                example: { type: "STRING" },
+                trans: { type: "STRING" }
+              },
+              required: ["word", "meaning", "example", "trans"]
+            }
+          }
+        },
+        required: ["title", "grammar", "vocab"]
+      };
+
+      try {
+        const resultText = await callGeminiAPI({
+          systemInstruction: "Bạn là giáo viên tiếng Đức bản xứ và chuyên gia biên soạn giáo trình. Hãy bóc tách nội dung bài học tiếng Đức do người dùng cung cấp thành JSON chuẩn xác: title (tên bài học), grammar (mảng các quy tắc ngữ pháp trọng tâm ngắn gọn bằng tiếng Việt), và vocab (mảng từ vựng cốt lõi gồm 4 trường: word - bắt buộc kèm mạo từ der/die/das nếu là danh từ số ít, meaning - nghĩa tiếng Việt sát ngữ cảnh, example - 1 câu ví dụ tiếng Đức thực tế tự nhiên, trans - dịch nghĩa tiếng Việt câu ví dụ).",
+          prompt: `Hãy bóc tách toàn bộ nội dung bài học sau:\n\n${rawText}`,
+          responseSchema: schema
+        });
+
+        const parsed = JSON.parse(resultText);
+        if (!document.getElementById("lessonTitleInput").value.trim() && parsed.title) {
+          document.getElementById("lessonTitleInput").value = parsed.title;
+        }
+        document.getElementById("lessonGrammarInput").value = (parsed.grammar || []).map(g => `- ${g}`).join("\n");
+        document.getElementById("lessonVocabJsonInput").value = JSON.stringify(parsed.vocab || [], null, 2);
+        showToast("✨ AI đã bóc tách thành công! Kiểm tra và bấm Lưu bài học.");
+      } catch (err) {
+        showToast(`❌ Lỗi AI: ${err.message}`);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalHtml;
+      }
+    }
+
+    // AI Feature 2: Lookup & Grammar Analysis
+    async function runAiLookup() {
+      const query = document.getElementById("aiLookupInput").value.trim();
+      if (!query) {
+        showToast("⚠️ Vui lòng nhập từ hoặc câu tiếng Đức/Việt cần tra cứu.");
+        return;
+      }
+
+      const btn = document.getElementById("aiLookupBtn");
+      const outputEl = document.getElementById("aiLookupResult");
+      const originalHtml = btn.innerHTML;
+
+      btn.disabled = true;
+      btn.innerHTML = `<span class="spinner"></span> Đang phân tích...`;
+      outputEl.style.display = "block";
+      outputEl.textContent = "⏳ Giáo viên tiếng Đức AI đang phân tích chi tiết...";
+
+      try {
+        const answer = await callGeminiAPI({
+          systemInstruction: "Bạn là giáo viên tiếng Đức bản xứ giàu kinh nghiệm dạy học viên Việt Nam. Khi nhận được một từ, cụm từ hoặc câu tiếng Đức/Việt, hãy trình bày rõ ràng, dễ hiểu bằng tiếng Việt theo các mục:\n1. Nghĩa chính & Ngữ cảnh sử dụng\n2. Phân tích từ loại & Ngữ pháp:\n   - Nếu là danh từ: ghi rõ giống (der/die/das) và dạng số nhiều (Plural).\n   - Nếu là động từ: ghi rõ nguyên thể, loại động từ (có quy tắc / bất quy tắc / tách được) và bảng chia hiện tại (Präsens) cho ich, du, er/sie/es, wir, ihr, sie/Sie.\n   - Nếu là câu: phân tích trật tự từ, cách (Nominativ/Akkusativ/Dativ) và cấu trúc ngữ pháp.\n3. 2 câu ví dụ thực tế kèm dịch tiếng Việt.",
+          prompt: `Hãy phân tích chi tiết từ hoặc câu sau: "${query}"`
+        });
+        outputEl.textContent = answer;
+      } catch (err) {
+        outputEl.innerHTML = `<span style="color:var(--danger); font-weight:600;">❌ Lỗi kết nối API: ${escapeHtml(err.message)}</span>`;
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalHtml;
+      }
+    }
+
+    // AI Feature 3: 5-Question Interactive Lesson Quiz
+    let currentQuizData = [];
+    let quizAnswersState = {};
+
+    async function startLessonQuiz(lessonId) {
+      const lesson = lessons.find(l => l.id === lessonId);
+      if (!lesson) return;
+
+      const modal = document.getElementById("quizModal");
+      const titleEl = document.getElementById("quizModalTitle");
+      const bodyEl = document.getElementById("quizModalBody");
+      const scoreBadge = document.getElementById("quizScoreBadge");
+
+      titleEl.textContent = `🎯 Quiz: ${lesson.title}`;
+      scoreBadge.textContent = "";
+      bodyEl.innerHTML = `
+        <div style="text-align:center; padding:32px 12px;">
+          <div class="spinner spinner-dark" style="width:32px; height:32px; margin-bottom:12px;"></div>
+          <p style="font-weight:600; color:var(--text-secondary);">Gemini AI đang tạo 5 câu hỏi trắc nghiệm bám sát nội dung bài học...</p>
+        </div>
+      `;
+      modal.classList.add("open");
+
+      const schema = {
+        type: "ARRAY",
+        items: {
+          type: "OBJECT",
+          properties: {
+            question: { type: "STRING" },
+            options: {
+              type: "ARRAY",
+              items: { type: "STRING" }
+            },
+            correctIndex: { type: "INTEGER" },
+            explanation: { type: "STRING" }
+          },
+          required: ["question", "options", "correctIndex", "explanation"]
+        }
+      };
+
+      const lessonContext = JSON.stringify({
+        title: lesson.title,
+        grammar: lesson.grammar,
+        vocab: lesson.vocab
+      });
+
+      try {
+        const resText = await callGeminiAPI({
+          systemInstruction: "Bạn là giáo viên tiếng Đức bản xứ. Dựa vào dữ liệu bài học được cung cấp, hãy tạo ĐÚNG 5 câu hỏi trắc nghiệm khách quan đa dạng (bao gồm: chọn nghĩa tiếng Việt/Đức, chọn mạo từ der/die/das, chia động từ hoặc điền từ vào chỗ trống). Mỗi câu có 4 lựa chọn (options), chỉ số đáp án đúng (correctIndex từ 0 đến 3) và giải thích ngắn gọn, rõ ràng bằng tiếng Việt (explanation).",
+          prompt: `Tạo 5 câu hỏi trắc nghiệm cho bài học sau:\n${lessonContext}`,
+          responseSchema: schema
+        });
+
+        const questions = JSON.parse(resText);
+        if (!Array.isArray(questions) || questions.length === 0) {
+          throw new Error("Không nhận được danh sách câu hỏi hợp lệ.");
+        }
+
+        currentQuizData = questions.slice(0, 5);
+        quizAnswersState = {};
+        renderQuizQuestions();
+      } catch (err) {
+        bodyEl.innerHTML = `
+          <div class="alert-banner alert-danger">
+            <span>❌ Không thể tạo Quiz: ${escapeHtml(err.message)}</span>
+          </div>
+        `;
+      }
+    }
+
+    function renderQuizQuestions() {
+      const bodyEl = document.getElementById("quizModalBody");
+      bodyEl.innerHTML = currentQuizData.map((q, qIdx) => {
+        const chosen = quizAnswersState[qIdx];
+        const isAnswered = chosen !== undefined;
+
+        return `
+          <div class="quiz-q-card">
+            <div class="quiz-q-title">Câu ${qIdx + 1}: ${escapeHtml(q.question)}</div>
+            <div class="quiz-options">
+              ${q.options.map((opt, optIdx) => {
+                let cls = "quiz-opt-btn";
+                if (isAnswered) {
+                  if (optIdx === q.correctIndex) {
+                    cls += " selected-correct";
+                  } else if (optIdx === chosen && chosen !== q.correctIndex) {
+                    cls += " selected-wrong";
+                  }
+                }
+                return `
+                  <button
+                    type="button"
+                    class="${cls}"
+                    ${isAnswered ? "disabled" : ""}
+                    onclick="selectQuizOption(${qIdx}, ${optIdx})"
+                  >
+                    <strong>${String.fromCharCode(65 + optIdx)}.</strong> ${escapeHtml(opt)}
+                  </button>
+                `;
+              }).join("")}
+            </div>
+            ${isAnswered ? `
+              <div class="quiz-feedback">
+                <strong>${chosen === q.correctIndex ? "✅ Chính xác!" : "❌ Chưa đúng!"}</strong>
+                ${escapeHtml(q.explanation)}
+              </div>
+            ` : ""}
+          </div>
+        `;
+      }).join("");
+
+      updateQuizScore();
+    }
+
+    function selectQuizOption(qIdx, optIdx) {
+      if (quizAnswersState[qIdx] !== undefined) return;
+      quizAnswersState[qIdx] = optIdx;
+      renderQuizQuestions();
+    }
+
+    function updateQuizScore() {
+      const total = currentQuizData.length;
+      const answeredCount = Object.keys(quizAnswersState).length;
+      let correctCount = 0;
+      for (const [qIdx, optIdx] of Object.entries(quizAnswersState)) {
+        if (currentQuizData[qIdx] && currentQuizData[qIdx].correctIndex === optIdx) {
+          correctCount++;
+        }
+      }
+      document.getElementById("quizScoreBadge").textContent =
+        `Điểm: ${correctCount}/${total} (Đã trả lời ${answeredCount}/${total})`;
+    }
+
+    function closeQuizModal() {
+      document.getElementById("quizModal").classList.remove("open");
+    }
+
+    // Export & Import JSON Backup
+    function exportBackupJSON() {
+      const backupPayload = {
+        app: "Deutsch A1 Master",
+        exportedAt: new Date().toISOString(),
+        lessons: lessons
+      };
+      const blob = new Blob([JSON.stringify(backupPayload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      const dateStr = new Date().toISOString().slice(0, 10);
+      a.href = url;
+      a.download = `deutsch-a1-backup-${dateStr}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("⬇️ Đã tải xuống file sao lưu (.json)!");
+    }
+
+    function importBackupJSON(event) {
+      const file = event.target.files?.[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          const importedLessons = Array.isArray(parsed) ? parsed : parsed.lessons;
+          if (!Array.isArray(importedLessons) || importedLessons.length === 0) {
+            throw new Error("Cấu trúc file JSON không hợp lệ.");
+          }
+          lessons = importedLessons.map((item, index) => ({
+            id: item.id || `imported-${Date.now()}-${index}`,
+            title: String(item.title || `Bài học ${index + 1}`),
+            completed: Boolean(item.completed),
+            grammar: Array.isArray(item.grammar) ? item.grammar : [],
+            vocab: Array.isArray(item.vocab) ? item.vocab : []
+          }));
+          saveLessonsToStorage();
+          renderLessons();
+          showToast(`✅ Đã khôi phục thành công ${lessons.length} bài học!`);
+        } catch (err) {
+          showToast(`❌ Lỗi nhập file: ${err.message}`);
+        } finally {
+          event.target.value = "";
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetToDefaultData() {
+      lessons = structuredClone(DEFAULT_LESSONS);
+      openLessonIds = new Set(["lektion-1-begruessung-pronomen"]);
+      saveLessonsToStorage();
+      renderLessons();
+      showToast("🔄 Đã khôi phục toàn bộ lộ trình gốc ban đầu!");
+    }
+
+    // Toast Notification
+    function showToast(message) {
+      const container = document.getElementById("toastContainer");
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transition = "opacity 0.25s ease";
+        setTimeout(() => toast.remove(), 260);
+      }, 3200);
+    }
+  </script>
+</body>
+</html>
